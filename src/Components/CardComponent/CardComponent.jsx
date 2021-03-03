@@ -2,10 +2,11 @@ import React from "react";
 import {Button, CardContent, Grid, makeStyles, Paper} from "@material-ui/core";
 import {useHistory} from "react-router-dom";
 import RefreshRoundedIcon from '@material-ui/icons/RefreshRounded'
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {deleteCard, getCity} from "../Redux/Card-reducers";
 import {getFlag, getImage} from "../Api/Api";
 import DeleteIcon from '@material-ui/icons/Delete';
+import {Preloader} from "../Tools/Preloader";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -54,9 +55,11 @@ export const CityCard = React.memo((props) => {
     const dataRound = (value) => {
         return Math.round(value)
     }
+    const isLoading = useSelector(state => state.main.isLoading);
     return (
         <div className={classes.root}>
             <CardContent>
+                {isLoading && <div><Preloader/></div>}
                 <Paper className={classes.paper} >
                     <h3> {name} <img alt="countryIco" src={getFlag(country)}/></h3>
                     <Grid container spacing={2} onClick={redirect}>
@@ -69,6 +72,7 @@ export const CityCard = React.memo((props) => {
                             <img alt="weatherIco" src={getImage(icon)}/>
                         </Grid>
                     </Grid>
+
                     <Button
                         variant="contained"
                         color="primary"

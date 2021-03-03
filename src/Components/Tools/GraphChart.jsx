@@ -2,6 +2,7 @@ import React from 'react'
 import {Chart} from 'react-google-charts'
 import Grid from '@material-ui/core/Grid'
 import {convertTime} from "./Converter";
+import {Preloader} from "./Preloader";
 
 
 export const GraphChart = React.memo((props) => {
@@ -31,7 +32,7 @@ export const GraphChart = React.memo((props) => {
                     width={'600px'}
                     height={'400px'}
                     chartType='ColumnChart'
-                    loader={<div>Loading Chart</div>}
+                    loader={<div><Preloader/></div>}
                     data={data}
                     options={{
                         hAxis: {title: 'Hour'},

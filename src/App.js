@@ -5,6 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {getCurrentByAsk} from "./Components/Redux/Card-reducers";
 import {MainBody} from "./Components/MainBody/MainBody";
+import FullScreenDialog from "./Components/DetailPage/DetailPAgeSlider";
 
 
 function App() {
@@ -25,10 +26,11 @@ function App() {
         localStorage.setItem('cityCards', JSON.stringify(cities.map((el) => el.id)))
     }, [cities])
 
-    return (
-        <div className="App" >
+    return  (
+        <div className="App">
             <Switch>
-                <Route path="/city/:name"> <DetailPage/> </Route>
+               {/* <Route path="/city/:name"> <DetailPage/> </Route>*/}
+                <Route path="/city/:name"> <FullScreenDialog/> </Route>
                 <Route exact path="/"> <MainBody cities={cities}/> </Route>
             </Switch>
         </div>

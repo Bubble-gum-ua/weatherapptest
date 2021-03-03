@@ -1,7 +1,11 @@
 .mainContentWrapp{
     color: white;
+    background-image: url(../Assets/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .mainContentWrapp div{
     padding-top: 5px;
 }
+
