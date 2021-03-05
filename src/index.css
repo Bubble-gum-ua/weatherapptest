@@ -3,3 +3,8 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+.MuiDialog-paperFullScreen {
+    background-image: url(Components/Assets/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}

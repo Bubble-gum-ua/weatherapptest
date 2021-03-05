@@ -9,8 +9,10 @@ import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
 import {DetailPage} from "./DetailPage";
 import {useHistory} from "react-router";
-import {useSelector} from "react-redux";
+import {useSelector, useDispatch} from "react-redux";
 import {getFlag} from "../Api/Api";
+import {useEffect} from "react";
+import {getCurrentByAsk} from "../Redux/Card-reducers";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -26,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     },
     root: {
         textAlign: "center",
-        background:" none"
+        background: " none"
     },
 
 }));
@@ -36,23 +38,34 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 export default function FullScreenDialog() {
+    const dispatch = useDispatch()
+    const cities = useSelector(state => state.cities.cities)
+
+    useEffect(() => {
+        const localDataCards = localStorage.getItem('cityCards')
+        if (localDataCards && localDataCards !== '[]') {
+            let citiesId = JSON.parse(localDataCards).reverse().join()
+            dispatch(getCurrentByAsk(citiesId))
+        }
+    }, [dispatch])
+    useEffect(() => {
+        localStorage.setItem('cityCards', JSON.stringify(cities.map((el) => el.id)))
+    }, [cities])
     const classes = useStyles();
     const [open, setOpen] = React.useState(true);
     const history = useHistory()
-    const cities = useSelector(state => state.cities.cities)
     const city = cities.find(el => el.name === cities[0].name)
     const country = city.sys.country
         .split("")
         .map(c => (c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase()))
         .join("");
-
     const handleClose = () => {
         setOpen(false)
         history.push(`/`)
     };
 
     return (
-        <div>
+        <div className="dialogPAge">
             <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}
                     className={classes.root}>
                 <AppBar className={classes.appBar}>
