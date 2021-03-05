@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/weatherapptest/static/css/main.3d23bf1f.chunk.css",
-    "main.js": "/weatherapptest/static/js/main.6859a5fe.chunk.js",
-    "main.js.map": "/weatherapptest/static/js/main.6859a5fe.chunk.js.map",
+    "main.css": "/weatherapptest/static/css/main.b5a6d5a4.chunk.css",
+    "main.js": "/weatherapptest/static/js/main.aef8201f.chunk.js",
+    "main.js.map": "/weatherapptest/static/js/main.aef8201f.chunk.js.map",
     "runtime-main.js": "/weatherapptest/static/js/runtime-main.a35703f0.js",
     "runtime-main.js.map": "/weatherapptest/static/js/runtime-main.a35703f0.js.map",
     "static/js/2.a3b30197.chunk.js": "/weatherapptest/static/js/2.a3b30197.chunk.js",
@@ -10,16 +10,16 @@
     "static/js/3.91837edc.chunk.js": "/weatherapptest/static/js/3.91837edc.chunk.js",
     "static/js/3.91837edc.chunk.js.map": "/weatherapptest/static/js/3.91837edc.chunk.js.map",
     "index.html": "/weatherapptest/index.html",
-    "static/css/main.3d23bf1f.chunk.css.map": "/weatherapptest/static/css/main.3d23bf1f.chunk.css.map",
+    "static/css/main.b5a6d5a4.chunk.css.map": "/weatherapptest/static/css/main.b5a6d5a4.chunk.css.map",
     "static/js/2.a3b30197.chunk.js.LICENSE.txt": "/weatherapptest/static/js/2.a3b30197.chunk.js.LICENSE.txt",
-    "static/media/DetailPage.css": "/weatherapptest/static/media/background.62e5983e.jpg",
+    "static/media/index.css": "/weatherapptest/static/media/background.62e5983e.jpg",
     "static/media/day.e170f8f7.svg": "/weatherapptest/static/media/day.e170f8f7.svg",
     "static/media/preloader.f608a838.svg": "/weatherapptest/static/media/preloader.f608a838.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.a35703f0.js",
     "static/js/2.a3b30197.chunk.js",
-    "static/css/main.3d23bf1f.chunk.css",
-    "static/js/main.6859a5fe.chunk.js"
+    "static/css/main.b5a6d5a4.chunk.css",
+    "static/js/main.aef8201f.chunk.js"
   ]
 }
