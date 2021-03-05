@@ -7,19 +7,21 @@ import {useSelector} from "react-redux";
 import {Preloader} from "../Tools/Preloader";
 import MainIco from "../Assets/day.svg"
 
-
-
 const useStyles = makeStyles({
     root: {
         minWidth: 275,
     }
 });
 
+
 export const MainBody = React.memo(props => {
     const classes = useStyles();
 
     let cardAdd = props.cities.map(cities =>
-        <Grid item>
+        <Grid
+            item
+            key={cities.id}
+        >
             <Grid item>
                 <CityCard name={cities.name}
                           main={cities.main}
@@ -27,12 +29,12 @@ export const MainBody = React.memo(props => {
                           wind={cities.wind}
                           weather={cities.weather}
                           icon={cities.weather[0].icon}
-                          sys={cities.sys}/>
+                          sys={cities.sys}
+                />
             </Grid>
         </Grid>
     )
     const isLoading = useSelector(state => state.main.isLoading)
-
     return (
         <div className="mainWrap">
             <h1>Welcome to the weather widget! <img src={MainIco} alt="mainIco"/></h1>

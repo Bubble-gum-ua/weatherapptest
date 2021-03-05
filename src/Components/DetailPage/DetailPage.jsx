@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import {Grid, makeStyles} from "@material-ui/core";
 import {useDispatch, useSelector} from "react-redux";
 import {getDetails} from "../Redux/Card-reducers";
-import {getFlag, getImage} from "../Api/Api";
+import {getImage} from "../Api/Api";
 import {convertTime} from "../Tools/Converter";
 import {GraphChart} from "../Tools/GraphChart";
 import "./DetailPage.css"
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     graph: {
         background: "rgb(48,107,101,0.8)",
         maxWidth: "600px",
-        marginTop: "10px"
+        marginTop: "10px",
     },
 }));
 
@@ -59,6 +59,7 @@ export const DetailPage = React.memo((props) => {
         const dataRound = (value) => {
             return Math.round(value)
         }
+
         return (
             <div className="mainContentWrapp">
                 <h2> Temperature: {dataRound(city.main.temp)} °C</h2>
@@ -76,7 +77,7 @@ export const DetailPage = React.memo((props) => {
                             <img alt="weatherIco" src={getImage(icon)}/>
                         </div>
                     </Grid>
-                    <Grid item xs={3} className={classes.graph}>
+                    <Grid item xs={5} className={classes.graph}>
                         <GraphChart detailCard={detailCard}/>
                     </Grid>
                 </Grid>
